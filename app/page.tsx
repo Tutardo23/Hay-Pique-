@@ -78,8 +78,10 @@ export default function HomePage() {
                 Antes de los programas y los proyectos hubo algo mucho más simple: acercarse, escuchar y quedarse.
                 Esa forma de estar fue creciendo hasta convertirse en una red de acompañamiento.
               </p>
-              <blockquote>“A vos.”</blockquote>
-              <small>Una respuesta que, según cuenta Catalina, marcó el comienzo de todo.</small>
+              <div className="origin-note">
+                <span>De un encuentro simple</span>
+                <strong>a una red que sigue creciendo.</strong>
+              </div>
             </Reveal>
             <Reveal delay={0.05}>
               <MediaSlot
