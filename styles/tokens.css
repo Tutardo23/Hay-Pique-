@@ -1,0 +1,24 @@
+:root {
+  --paper: #f8f3e9;
+  --paper-warm: #fffaf1;
+  --paper-deep: #efe6d8;
+  --ink: #243238;
+  --ink-2: #53666d;
+  --aqua: #62cad9;
+  --aqua-deep: #24aebe;
+  --aqua-soft: #dff3f4;
+  --pink: #e7bfd6;
+  --pink-soft: #f7eaf1;
+  --green: #cce39a;
+  --green-soft: #eef6d9;
+  --yellow: #efd28d;
+  --yellow-soft: #fff0c9;
+  --lavender-soft: #eceaf4;
+  --line: rgba(36, 50, 56, 0.14);
+  --line-strong: rgba(36, 50, 56, 0.24);
+  --shadow-soft: 0 18px 50px rgba(36, 50, 56, 0.09);
+  --shadow-card: 0 14px 0 rgba(36, 50, 56, 0.07), 0 22px 52px rgba(36, 50, 56, 0.08);
+  --radius-lg: 34px;
+  --radius-md: 24px;
+  --shell: 1240px;
+}

@@ -1,25 +1,38 @@
-# Fundación Hay Pique! — V1 creativa
+# Fundación Hay Pique! — V3 “Un hilo que acompaña”
+
+Reconstrucción limpia de la web con Next.js App Router, TypeScript, Motion y Lenis.
 
 ## Ejecutar
 
 ```bash
-npm i
+npm install
 npm run dev
 ```
 
-Abrir http://localhost:3000
+Luego abrir http://localhost:3000
 
-## Qué incluye
-- Next.js App Router + TypeScript
-- Tailwind CSS 4
-- Motion
-- Lenis (se desactiva con Reduced Motion)
-- SEO base, Open Graph, sitemap y robots
-- Mobile-first
-- Logo real de la fundación
-- Lugares visualmente resueltos para reemplazar por fotos/videos reales
+## Idea visual
+
+El hilo turquesa nace de la identidad del logo y reaparece por capítulos: portada, “Lo que nos mueve”, red y cierre. No es un SVG gigante continuo, para mantener responsive, accesibilidad y estabilidad.
+
+## Fotos / videos pendientes
+
+Los espacios marcados como FOTO / REEL son deliberados. Reemplazar solamente con material real autorizado de la fundación.
+
+Carpetas previstas:
+
+- `public/images/hero/`
+- `public/images/history/`
+- `public/images/wednesday/`
+- `public/images/programs/`
+- `public/images/team/`
+- `public/videos/`
+- `public/posters/`
 
 ## Importante
-No hay n8n ni automatizaciones en esta versión.
-No hay donaciones ni datos de contacto inventados.
-Los objetivos 2029 se muestran como metas futuras.
+
+- No incluye n8n.
+- No inventa formas de donación ni contacto.
+- Los objetivos 2029 se identifican como metas futuras.
+- “Lo que nos mueve” renderiza una sola escena por vez para evitar solapamientos.
+- Respeta `prefers-reduced-motion`.

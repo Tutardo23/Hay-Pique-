@@ -1,0 +1,42 @@
+export const programs = [
+  {
+    number: "01",
+    title: "Aprender Mejor",
+    text: "Apoyo escolar y seguimiento de trayectorias educativas.",
+    src: "/images/programs/aprender-mejor.webp",
+    alt: "Chicos realizando actividades de apoyo escolar en Hay Pique",
+    position: "center center",
+  },
+  {
+    number: "02",
+    title: "Acompañar",
+    text: "Apoyo psicopedagógico, fonoaudiológico y orientación a familias.",
+    src: "/images/story/uno-a-uno.webp",
+    alt: "Acompañamiento individual durante una actividad de Hay Pique",
+    position: "center 38%",
+  },
+  {
+    number: "03",
+    title: "Cuidar",
+    text: "Salud, prevención y desarrollo integral.",
+    src: "/images/programs/cuidar.webp",
+    alt: "Actividad vinculada al cuidado de la salud en Hay Pique",
+    position: "center center",
+  },
+  {
+    number: "04",
+    title: "Hay Pique en Red",
+    text: "Articulación con empresas, instituciones educativas, parroquias, ONG e instituciones públicas.",
+    src: "/images/programs/hay-pique-en-red.webp",
+    alt: "Chicos y voluntarios reunidos en una actividad de Hay Pique",
+    position: "center 44%",
+  },
+  {
+    number: "05",
+    title: "Proyecto de expansión territorial",
+    text: "Un horizonte de crecimiento que busca llevar el modo de acompañar de Hay Pique a nuevos territorios.",
+    src: "/images/programs/expansion-territorial.webp",
+    alt: "Encuentro comunitario de Hay Pique en uno de sus espacios de trabajo",
+    position: "center center",
+  },
+] as const;
