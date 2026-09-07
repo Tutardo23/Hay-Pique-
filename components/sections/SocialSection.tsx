@@ -29,9 +29,9 @@ export function SocialSection() {
           />
           <VideoFrame
             className="social-shot social-video"
-            src="/videos/actividad-creativa.mp4"
-            poster="/images/posters/actividad-creativa.jpg"
-            label="Actividad creativa compartida por Hay Pique"
+            src="/videos/dia-del-nino.mp4"
+            poster="/images/posters/dia-del-nino.jpg"
+            label="Chicos bailando durante la celebración del Día del Niño en Hay Pique"
           />
         </div>
       </div>

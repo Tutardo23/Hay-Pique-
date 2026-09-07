@@ -67,20 +67,24 @@ section[id] { scroll-margin-top: 96px; }
 .hero-title em {
   color: var(--aqua-deep);
   font-style: normal;
-  position: relative;
-  display: inline;
 }
-.hero-title em::after {
+.hero-title .hero-underline {
+  position: relative;
+  display: inline-block;
+  z-index: 0;
+}
+.hero-title .hero-underline::after {
   content: "";
   position: absolute;
-  left: -2px;
-  right: -2px;
-  bottom: -4px;
+  left: -3px;
+  right: -5px;
+  bottom: -2px;
   height: 5px;
   z-index: -1;
   border-radius: 50%;
   background: var(--yellow);
   transform: rotate(-1.2deg);
+  transform-origin: left center;
 }
 .hero-copy p {
   max-width: 560px;

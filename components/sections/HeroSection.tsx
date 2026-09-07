@@ -8,7 +8,7 @@ export function HeroSection() {
         <div className="hero-copy">
           <div className="section-label">Tucumán · Argentina</div>
           <h1 id="hero-title" className="hero-title">
-            Estar cerca <em>puede cambiar</em> una historia.
+            Estar cerca <em>puede <span className="hero-underline">cambiar</span></em> una historia.
           </h1>
           <p>
             Acompañamos a niños, niñas y jóvenes en sus trayectorias educativas,
@@ -25,9 +25,9 @@ export function HeroSection() {
         <div className="hero-art">
           <MediaFrame
             className="hero-main-frame"
-            src="/images/hero/hero-principal.webp"
-            alt="Dos niñas realizando una actividad educativa en Hay Pique"
-            position="center 46%"
+            src="/images/hero/hero-mochilas.webp"
+            alt="Mochilas preparadas para las actividades educativas de Hay Pique"
+            position="center 52%"
             priority
           />
           <MediaFrame
