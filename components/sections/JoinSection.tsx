@@ -3,23 +3,35 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const instagram = "https://www.instagram.com/fundacion_hay_pique/";
 const whatsapp = "https://wa.me/5491168009917";
+const colaborarUrl =
+  "https://checkoutfrontend.totalcoin.com/workspace/checkout/receptor?BID=0da51f56-fe87-4b5e-b8d7-75e88956d09d";
 
 const options = [
   {
     label: "Ser voluntario/a",
-    message: "Hola Cata, vi la página de Fundación Hay Pique y me gustaría sumarme como voluntario/a.",
+    href: `${whatsapp}?text=${encodeURIComponent(
+      "Hola Cata, vi la página de Fundación Hay Pique y me gustaría sumarme como voluntario/a.",
+    )}`,
+    ariaLabel: "Ser voluntario/a. Contactar a Fundación Hay Pique por WhatsApp",
   },
   {
     label: "Colaborar",
-    message: "Hola Cata, vi la página de Fundación Hay Pique y me gustaría colaborar con la fundación.",
+    href: colaborarUrl,
+    ariaLabel: "Colaborar con Fundación Hay Pique",
   },
   {
     label: "Generar una alianza",
-    message: "Hola Cata, vi la página de Fundación Hay Pique y me gustaría conversar sobre una posible alianza.",
+    href: `${whatsapp}?text=${encodeURIComponent(
+      "Hola Cata, vi la página de Fundación Hay Pique y me gustaría conversar sobre una posible alianza.",
+    )}`,
+    ariaLabel: "Generar una alianza. Contactar a Fundación Hay Pique por WhatsApp",
   },
   {
     label: "Conocer más",
-    message: "Hola Cata, vi la página de Fundación Hay Pique y me gustaría conocer más sobre lo que hacen.",
+    href: `${whatsapp}?text=${encodeURIComponent(
+      "Hola Cata, vi la página de Fundación Hay Pique y me gustaría conocer más sobre lo que hacen.",
+    )}`,
+    ariaLabel: "Conocer más. Contactar a Fundación Hay Pique por WhatsApp",
   },
 ] as const;
 
@@ -48,12 +60,7 @@ export function JoinSection() {
               gap: "10px 18px",
             }}
           >
-            <a
-              className="join-contact"
-              href={instagram}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a className="join-contact" href={instagram} target="_blank" rel="noreferrer">
               Instagram ↗
             </a>
             <a
@@ -74,10 +81,10 @@ export function JoinSection() {
             <a
               className="join-row"
               key={option.label}
-              href={whatsappHref(option.message)}
+              href={option.href}
               target="_blank"
               rel="noreferrer"
-              aria-label={`${option.label}. Contactar a Fundación Hay Pique por WhatsApp`}
+              aria-label={option.ariaLabel}
             >
               <span>0{index + 1}</span>
               <strong>{option.label}</strong>
