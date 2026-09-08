@@ -6,7 +6,6 @@ import { StorySection } from "@/components/sections/StorySection";
 import { WednesdaySection } from "@/components/sections/WednesdaySection";
 import { ProgramsSection } from "@/components/sections/ProgramsSection";
 import { NetworkSection } from "@/components/sections/NetworkSection";
-import { ImpactSection } from "@/components/sections/ImpactSection";
 import { SocialSection } from "@/components/sections/SocialSection";
 import { JoinSection } from "@/components/sections/JoinSection";
 
@@ -22,7 +21,6 @@ export default function HomePage() {
       <WednesdaySection />
       <ProgramsSection />
       <NetworkSection />
-      <ImpactSection />
       <SocialSection />
       <JoinSection />
       <Footer />

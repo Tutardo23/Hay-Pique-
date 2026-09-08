@@ -2,6 +2,8 @@ import { DrawnThread } from "@/components/motion/DrawnThread";
 import { MediaFrame } from "@/components/media/MediaFrame";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
+const fonbecUrl = "https://www.fonbec.org.ar/";
+
 export function NetworkSection() {
   return (
     <section className="network-section section">
@@ -12,12 +14,24 @@ export function NetworkSection() {
             title={<>Nadie hace esto <em>solo.</em></>}
             copy="Acá se encuentran personas e instituciones que, desde distintos lugares, se comprometen y aportan su tiempo, sus conocimientos y sus recursos para transformar realidades."
           />
-          <div className="fonbec-card">
-            <span className="fonbec-label">Becas</span>
+
+          <a
+            className="fonbec-card"
+            href={fonbecUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Conocer FONBEC"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            <span className="fonbec-label">Becas · FONBEC ↗</span>
             <strong>9 chicos</strong>
-            <p>cuentan con padrinos que acompañan económicamente sus trayectorias escolares gracias a la articulación con FONBEC.</p>
-          </div>
+            <p>
+              cuentan con padrinos que acompañan económicamente sus trayectorias
+              escolares gracias a la articulación con FONBEC.
+            </p>
+          </a>
         </div>
+
         <div className="network-photo">
           <DrawnThread className="network-thread" variant="network" />
           <MediaFrame
