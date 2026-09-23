@@ -1,10 +1,13 @@
 import { auth, currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { getSql } from "@/lib/db";
-import type { AdminIdentity, AdminRole } from "@/types/service";
+import type { AdminIdentity } from "@/types/service";
 
 function normalizeEmail(value: string | undefined | null) {
   return value?.trim().toLowerCase() ?? "";
+}
+
+function editorRole(value: unknown) {
+  return value === "editor";
 }
 
 export async function getAdminIdentity(): Promise<AdminIdentity | null> {
@@ -20,10 +23,9 @@ export async function getAdminIdentity(): Promise<AdminIdentity | null> {
     .map((address) => normalizeEmail(address.emailAddress))
     .filter(Boolean);
 
-  if (!emails.length) return null;
-
   const ownerEmail = normalizeEmail(process.env.HAYPIQUE_OWNER_EMAIL);
 
+  // El propietario actual puede seguir entrando con Google.
   if (ownerEmail && emails.includes(ownerEmail)) {
     return {
       userId,
@@ -34,34 +36,19 @@ export async function getAdminIdentity(): Promise<AdminIdentity | null> {
   }
 
   /*
-   * Para editores buscamos el Gmail autenticado en la allowlist.
-   * No hay invitaciones ni permisos derivados de Clerk.
-   * Si Neon falla o no hay coincidencia exacta, se niega el acceso.
+   * Los editores de usuario + contraseña se autorizan exclusivamente
+   * mediante privateMetadata de Clerk. Ese dato solamente puede modificarse
+   * desde el Backend API de Clerk, nunca desde el navegador.
    */
-  try {
-    const sql = getSql();
-
-    for (const email of emails) {
-      const rows = (await sql`
-        SELECT email, role
-        FROM hp_admin_users
-        WHERE LOWER(email) = ${email}
-        LIMIT 1
-      `) as Array<{ email: string; role: AdminRole }>;
-
-      const access = rows[0];
-
-      if (access?.role === "editor") {
-        return {
-          userId,
-          email,
-          name: user.fullName || user.firstName || "Editor",
-          role: "editor",
-        };
-      }
-    }
-  } catch {
-    return null;
+  if (editorRole(user.privateMetadata?.hayPiqueRole) && user.username) {
+    return {
+      userId,
+      // Se mantiene la propiedad "email" por compatibilidad con el audit
+      // existente. Para usuarios sin email guarda el identificador.
+      email: `@${user.username}`,
+      name: user.fullName || user.firstName || user.username,
+      role: "editor",
+    };
   }
 
   return null;

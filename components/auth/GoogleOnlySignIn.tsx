@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function GoogleMark() {
   return (
-    <svg width="19" height="19" viewBox="0 0 18 18" aria-hidden="true">
+    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
       <path fill="#4285F4" d="M17.64 9.205c0-.638-.057-1.252-.164-1.841H9v3.482h4.844a4.14 4.14 0 0 1-1.797 2.716v2.258h2.909c1.702-1.568 2.684-3.878 2.684-6.615Z"/>
       <path fill="#34A853" d="M9 18c2.43 0 4.468-.806 5.956-2.18l-2.91-2.258c-.805.54-1.835.86-3.046.86-2.344 0-4.33-1.584-5.04-3.71H.951v2.332A9 9 0 0 0 9 18Z"/>
       <path fill="#FBBC05" d="M3.96 10.712A5.41 5.41 0 0 1 3.678 9c0-.594.102-1.17.282-1.712V4.956H.951A9 9 0 0 0 0 9c0 1.452.347 2.827.951 4.044l3.009-2.332Z"/>
@@ -32,31 +32,25 @@ export function GoogleOnlySignIn() {
         redirectUrlComplete: "/admin",
       });
     } catch (err) {
-      console.error("google-admin-sign-in", err);
+      console.error("owner-google-sign-in", err);
       setError("No pudimos abrir Google. Intentá nuevamente.");
       setBusy(false);
     }
   }
 
   return (
-    <div className="hp-auth-google-box">
+    <div className="hp-owner-google">
       <button
         type="button"
-        className="hp-auth-google-button"
+        className="hp-owner-google-button"
         onClick={handleGoogle}
         disabled={busy || !signIn}
       >
         <GoogleMark />
-        <span>{busy ? "Abriendo Google…" : "Continuar con Google"}</span>
-        <i aria-hidden="true">→</i>
+        <span>{busy ? "Abriendo Google…" : "Acceso del propietario con Google"}</span>
       </button>
 
-      <p className="hp-auth-google-help">
-        Solo pueden ingresar los Gmail previamente habilitados en el panel.
-      </p>
-
-      {error ? <p className="hp-auth-google-error">{error}</p> : null}
-
+      {error ? <p className="hp-credential-error">{error}</p> : null}
       <div id="clerk-captcha" />
     </div>
   );

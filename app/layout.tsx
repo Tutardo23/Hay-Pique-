@@ -6,6 +6,7 @@ import "@/styles/tokens.css";
 import "@/styles/base.css";
 import "@/styles/sections.css";
 import "@/styles/services.css";
+import "@/styles/auth-credentials.css";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 const display = Bricolage_Grotesque({
