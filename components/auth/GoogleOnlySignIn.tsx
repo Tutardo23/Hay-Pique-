@@ -32,7 +32,7 @@ export function GoogleOnlySignIn() {
         redirectUrlComplete: "/admin",
       });
     } catch (err) {
-      console.error("owner-google-sign-in", err);
+      console.error("google-sign-in", err);
       setError("No pudimos abrir Google. Intentá nuevamente.");
       setBusy(false);
     }
@@ -47,7 +47,7 @@ export function GoogleOnlySignIn() {
         disabled={busy || !signIn}
       >
         <GoogleMark />
-        <span>{busy ? "Abriendo Google…" : "Acceso del propietario con Google"}</span>
+        <span>{busy ? "Abriendo Google…" : "Continuar con Google"}</span>
       </button>
 
       {error ? <p className="hp-credential-error">{error}</p> : null}

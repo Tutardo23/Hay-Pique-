@@ -38,7 +38,7 @@ export function ResetEditorPasswordForm({ userId }: { userId: string }) {
           name="password"
           type={showPassword ? "text" : "password"}
           autoComplete="new-password"
-          minLength={12}
+          minLength={8}
           maxLength={128}
           required
           placeholder="Nueva contraseña"

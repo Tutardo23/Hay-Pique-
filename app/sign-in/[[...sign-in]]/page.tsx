@@ -54,15 +54,15 @@ export default async function SignInPage() {
             <UsernamePasswordSignIn />
 
             <div className="hp-owner-divider">
-              <span>Propietario</span>
+              <span>o</span>
             </div>
 
             <GoogleOnlySignIn />
 
             <div className="hp-auth-v3-security">
-              <strong>Sin registro público.</strong>
+              <strong>Acceso privado.</strong>
               <span>
-                Los usuarios se crean únicamente desde el panel del propietario.
+                Solo pueden entrar las cuentas habilitadas para este panel.
               </span>
             </div>
           </section>

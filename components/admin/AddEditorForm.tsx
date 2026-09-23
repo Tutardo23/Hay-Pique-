@@ -26,7 +26,7 @@ function Button() {
 function makePassword() {
   const alphabet =
     "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#%&*";
-  const values = new Uint32Array(18);
+  const values = new Uint32Array(12);
   crypto.getRandomValues(values);
 
   return Array.from(values, (value) => alphabet[value % alphabet.length]).join("");
@@ -84,10 +84,10 @@ export function AddEditorForm() {
               autoComplete="new-password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              minLength={12}
+              minLength={8}
               maxLength={128}
               required
-              placeholder="Mínimo 12 caracteres"
+              placeholder="Mínimo 8 caracteres"
             />
             <button
               type="button"

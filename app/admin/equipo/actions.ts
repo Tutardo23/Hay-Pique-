@@ -26,7 +26,7 @@ const displayNameSchema = z
 
 const passwordSchema = z
   .string()
-  .min(12, "La contraseña debe tener al menos 12 caracteres.")
+  .min(8, "La contraseña debe tener al menos 8 caracteres.")
   .max(128, "La contraseña es demasiado larga.");
 
 type ClerkErrorShape = {
@@ -57,6 +57,13 @@ function clerkErrorMessage(error: unknown) {
     detail.toLowerCase().includes("compromised")
   ) {
     return "Clerk rechazó esa contraseña por seguridad. Elegí otra más fuerte.";
+  }
+
+  if (
+    detail.toLowerCase().includes("characters or more") ||
+    detail.toLowerCase().includes("minimum password")
+  ) {
+    return "Clerk tiene configurado un mínimo de contraseña más alto. Bajalo a 8 caracteres en Clerk → User & authentication → Password.";
   }
 
   if (
