@@ -20,7 +20,7 @@ export function ServiceCard({ service, index = 0 }: { service: ServiceRecord; in
         {cover ? (
           <Image src={cover} alt={service.image_alt || firstImage?.alt || service.title} fill sizes="(max-width: 760px) 88vw, (max-width: 1100px) 44vw, 360px" unoptimized={cover.startsWith("/api/media/service/")} />
         ) : (
-          <div className="hp-service-placeholder" aria-hidden="true"><span>Hay Pique</span><i /></div>
+          <div className="hp-service-placeholder" aria-hidden="true"><span>Hay Pique!</span><i /></div>
         )}
         {service.media_gallery?.some((item) => item.kind === "video") ? <span className="hp-service-card-video-badge">Incluye video</span> : null}
       </Link>

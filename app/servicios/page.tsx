@@ -7,7 +7,7 @@ import { listPublishedServices } from "@/lib/services";
 export const metadata: Metadata = {
   title: "Servicios con propósito",
   description:
-    "Propuestas educativas y de formación de Fundación Hay Pique que ayudan a sostener su trabajo social.",
+    "Propuestas educativas y de formación de Fundación Hay Pique! que ayudan a sostener su trabajo social.",
   alternates: { canonical: "/servicios" },
 };
 
@@ -31,7 +31,7 @@ export default async function ServicesPage() {
               <p>
                 Propuestas educativas y de formación para personas e
                 instituciones. Cada participación ayuda a sostener y ampliar el
-                trabajo de Fundación Hay Pique.
+                trabajo de Fundación Hay Pique!.
               </p>
             </div>
 

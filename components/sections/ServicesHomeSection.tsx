@@ -15,7 +15,7 @@ export async function ServicesHomeSection() {
             <h2>Aprender también puede <em>multiplicar oportunidades.</em></h2>
             <p>
               Propuestas educativas y de formación abiertas a la comunidad. Cada participación
-              ayuda a sostener el trabajo de Fundación Hay Pique y ampliar oportunidades.
+              ayuda a sostener el trabajo de Fundación Hay Pique! y ampliar oportunidades.
             </p>
           </div>
           <Link href="/servicios" className="hp-services-all">Ver todas las propuestas →</Link>

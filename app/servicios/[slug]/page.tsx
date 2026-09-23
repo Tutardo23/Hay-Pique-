@@ -123,7 +123,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <section className="hp-service-purpose hp-service-purpose-v3">
             <div><span>Una propuesta con propósito</span><h2>Tu participación también acompaña.</h2></div>
-            <p>Los ingresos generados por esta actividad contribuyen a sostener y ampliar las acciones de Fundación Hay Pique para quienes más lo necesitan.</p>
+            <p>Los ingresos generados por esta actividad contribuyen a sostener y ampliar las acciones de Fundación Hay Pique! para quienes más lo necesitan.</p>
           </section>
         </div>
       </article>
